@@ -14,10 +14,29 @@ This work is inspired by my work on STIX, a Cyber Threat Inteligence standard, t
 
 ## MetaData Object
 
+Properties:
+uuid		UUIDv4
+modified	date of last modification
+dc:<prop>	A [Dublin Core] property
+object_marking_refs	Imported from [STIX v2.0 Part 1]: Section 3.1
+granular_markings	Imported from [STIX v2.0 Part 1]: Section 3.1
+
+Opinion Properties:
+qualityrating	On a scale from 1 (poor/terrible) to 5 (great/pristine), the subjective quality of the content
+
 The base object will contain all the data associated w/ the file.  The base set of data is based upon the [Dublin Core] specification, as it provides a nice starting point, and will provide a good mapping to other systems out there.
 
-## Link Object
+There may be a link to another MetaData object from which this one is derived.  If there is, all the meta data from the derived object (and the ones it derives from) must be included, except for the ones that have been marked deleted, or were overridden.  When a property is marked as opinion, it should not be inherited.  If the new author agrees with the opinion, then they have to restate the opinion in their object.
+
+Custom properties must be preceeded w/ a namespace.  The name space is name followed by colon, as is demonstracted above w/ dc for [Dublin Core].
+
+The link to the metadata object must include the version referenced, as the referenced object may change.  A three way merge may be needed when updating an object where the derived object has also been updated if the new information is wished to be used.
+
+Open Questions:  When metadata is "declassified", how do you maintain a link to the classified version?
+
+## File Object
 
 A link object references a MetaData Object, and contains information about the file that the metadata object is associated with.
 
 [Dublin Core]: http://dublincore.org/documents/dces/
+[STIX v2.0 Part 1]: http://docs.oasis-open.org/cti/stix/v2.0/cs01/part1-stix-core/stix-v2.0-cs01-part1-stix-core.html
