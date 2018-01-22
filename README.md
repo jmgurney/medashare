@@ -12,6 +12,15 @@ This can be useful for things like raw files on a camera, where you associate ge
 
 This work is inspired by my work on STIX, a Cyber Threat Inteligence standard, that has many similar requirements as meta data sharing.
 
+## Goals
+
+1. Provide meta data, such as title, actors, copyright holder, for files, such as movies, photos, documents.
+2. Allow look up of meta data by title, actors, etc.
+3. Look up meta data belonging to a file, via file hash.
+4. Support embedded files, such as within a zip file, or bittorrent, so the querier can get all the meta data for a container file, or that the file can be located for download.
+5. Identify transformations of files, such as a reencoding of a movie, or a resizing of a photo.
+6. Possily use of fingerprint technology, so that the database can be to query metadata based upon parts of the audio/video/image.
+
 ## MetaData Object
 
 Properties:
