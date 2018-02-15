@@ -20,6 +20,7 @@ This work is inspired by my work on STIX, a Cyber Threat Inteligence standard, t
 4. Support embedded files, such as within a zip file, or bittorrent, so the querier can get all the meta data for a container file, or that the file can be located for download.
 5. Identify transformations of files, such as a reencoding of a movie, or a resizing of a photo.
 6. Possily use of fingerprint technology, so that the database can be to query metadata based upon parts of the audio/video/image.
+7. Provide metadata for other objects too, such as suggested page down locations for PDFs, or what parts of PDF should be kept on screen in a complete set, so that a page down keeps things readable (and you don't have to arrow up).
 
 ## MetaData Object
 
